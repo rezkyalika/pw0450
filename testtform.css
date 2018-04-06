@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ 
+body{
+    background:  linear-gradient(to right, #C71585 , yellow);
+}
+ 
+div.konten{
+    background: transparent;
+    width: 400px;
+    margin: 222px auto 0;
+    border-radius: 20px;
+    min-height: 256px;
+    overflow: hidden;
+}
+ 
+div.kepala{
+    background: ##FFFFFF;
+    padding: 10px 22px;
+    height: 70px;
+}
+ 
+div.kepala h2.judul{
+    color: white;
+    font-weight: normal;
+    line-height: 60px;
+    display: inline-block;
+    font-family: Monotype Corsiva;
+}
+ 
+div.lock{
+    background-image: url("instagram.png");
+    background-position: center;
+    background-size: 40px;
+    display: inline-block;
+    width: 43px;
+    height: 43px; 
+    margin-top: 8px;
+    float: left;
+    margin-right: 10px;
+}
+ 
+div.artikel{
+    padding:10px 22px 0;
+    color: white;
+}
+ 
+div.artikel div.grup{
+    margin: 16px 0;
+}
+ 
+div.artikel div.grup label,
+div.artikel div.grup input{
+    display: block;
+}
+ 
+div.artikel div.grup label{
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+ 
+div.artikel div.grup input[type="text"],
+div.artikel div.grup input[type="password"]{
+    width: 100%;
+    height: 30px;
+    padding: 0 10px;
+    background: #DCDCDC;
+    border:none;
+    color: #808080;
+}
+ 
+div.artikel div.grup input[type="submit"]{
+    background: #33cd77;
+    padding: 4px 16px;
+    margin: 0 auto;
+    border: 1px solid #33cd77;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+}
+ 
+div.artikel div.grup input[type="submit"]:hover{
+    background: #28a45e;
+}
