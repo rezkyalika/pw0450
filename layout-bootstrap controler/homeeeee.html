@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fa/web-fa/css/fontawesome-all.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+    <script>
+    	var app = angular.module("myApp", ["ngRoute"]);
+
+    	app.config(function($routeProvider){
+    		$routeProvider
+		    .when("/", {
+		        templateUrl : "main.htm", controller : "mainCtrl"
+		    })
+		    .when("/about", {
+		    	templateUrl : "about.htm", controller : "weatherCtrl"
+		    });
+
+    	});
+
+    	app.controller('homeCtrl', function($scope){
+    		$scope.title = "Welcome";
+    	});
+
+    	app.controller('mainCtrl', function($scope){
+    		$scope.text1 = "This is paragraph 1";
+    		$scope.text2 = "Sample of text to develope website using Framework Angular JS";
+    		$scope.text3 = "We learn about Routing and controller in Angular JS";
+
+    	});
+
+    	app.controller('weatherCtrl', function($scope, $http){
+    		$http.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=4de4dd041e499ca8a4f6692097befdae')
+    		.then(function(response){
+    			$scope.info = response.data;
+    		});
+    	});
+    </script>
+
+  </head>
+
+  <body>
+
+  	<div ng-app="myApp" ng-controller="homeCtrl" class="container-fluid">
+  	  <div class="row">
+  	  	<div class="col-md-12 header">
+  	  		<h1>{{ title }}</h1>
+  	  	</div>
+	  </div>
+
+	  <div class="row">
+	  	<div class="col-md-12 menu">
+	  		<a href="#/!"><i class="fas fa-home"></i> 
+	  		Home</a> | 
+	  		<a href="#!about">About</a> | 
+	  		<a href="#!product">Product</a> | 
+	  		<a href="#!contact">Contact</a>
+	  	</div>
+	  </div>
+
+	  <div ng-view></div>
+
+	  <div class="row">
+	  	<hr />
+	  	<div class="col-md-12">&copy; 2018 - Arif Laksito</div>
+	  </div>
+
+	</div>
+
+  </body>
+
+</html>
